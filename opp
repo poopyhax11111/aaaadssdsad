@@ -1,0 +1,20 @@
+local a = game:GetService(string.char(80, 108, 97, 121, 101, 114, 115))
+local b = game:GetService(string.char(82, 117, 110, 83, 101, 114, 118, 105, 99, 101))
+
+local c = a.LocalPlayer
+
+local function d()
+    local e = game.Workspace:WaitForChild(string.char(115, 111, 99, 107, 121))
+    local f = e:WaitForChild(string.char(84, 111, 114, 115, 111))
+    local g = c.Character or c.CharacterAdded:Wait()
+    local h = g:WaitForChild(string.char(72, 117, 109, 97, 110, 111, 105, 100, 82, 111, 111, 116, 80, 97, 114, 116))
+
+    f.CFrame = h.CFrame
+
+    local i = 100
+    b.RenderStepped:Connect(function()
+        f.CFrame = f.CFrame * CFrame.Angles(0, math.rad(i), 0)
+    end)
+end
+
+d()
